@@ -47,7 +47,7 @@ export default function Home() {
                 <span className="text-yellow-400">FIGHT STREAMS</span>
               </h1>
               <p className="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed max-w-3xl">
-                Watch exclusive SIROC boxing events and world-class combat sports 
+                Watch exclusive SIR ROC boxing events and world-class combat sports 
                 in ultra-high definition. Live fights, instant replays, multi-angle coverage.
               </p>
               <div className="flex flex-wrap gap-6 mb-8">
@@ -106,7 +106,7 @@ export default function Home() {
       <div className="mt-16 mb-12">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 uppercase tracking-wide">
-            Why Choose <span className="text-yellow-400">SIROC Stream</span>
+            Why Choose <span className="text-yellow-400">SIR ROC Stream</span>
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
             Professional fight broadcasting with premium features that put you ringside
@@ -122,7 +122,7 @@ export default function Home() {
             </div>
             <h3 className="text-xl font-bold text-white mb-3">EXCLUSIVE CONTENT</h3>
             <p className="text-gray-400">
-              Access to SIROC championship fights, behind-the-scenes content, 
+              Access to SIR ROC championship fights, behind-the-scenes content, 
               and fighter interviews you won&apos;t find anywhere else.
             </p>
           </div>

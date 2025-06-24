@@ -20,7 +20,7 @@ const LiveChat: React.FC = () => {
 
   const mockMessages: ChatMessage[] = [
     { id: '1', username: 'BoxingFan92', message: 'This fight is incredible! 🔥', timestamp: '2:34', isVip: true },
-    { id: '2', username: 'FightNight', message: 'SIROC always delivers the best fights', timestamp: '2:35' },
+    { id: '2', username: 'FightNight', message: 'SIR ROC always delivers the best fights', timestamp: '2:35' },
     { id: '3', username: 'KnockoutKing', message: 'That was a beautiful combination!', timestamp: '2:35' },
     { id: '4', username: 'ChatMod', message: 'Keep the chat respectful everyone! 🥊', timestamp: '2:36', isModerator: true },
     { id: '5', username: 'RingwormJoe', message: 'The quality is amazing, crystal clear 4K', timestamp: '2:36' },
@@ -36,7 +36,7 @@ const LiveChat: React.FC = () => {
     const interval = setInterval(() => {
       const randomMessages = [
         'This is intense! 🥊',
-        'SIROC Stream is the best!',
+        'SIR ROC Stream is the best!',
         'What a knockout! 💥',
         'Amazing quality stream',
         'That was a close round',

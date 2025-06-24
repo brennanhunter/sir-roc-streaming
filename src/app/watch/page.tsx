@@ -49,7 +49,7 @@ export default function WatchPage() {
     },
     {
       id: 'related-4',
-      title: 'SIROC UNDERCARD SPECIAL',
+      title: 'SIR ROC UNDERCARD SPECIAL',
       description: 'Rising Stars Championship Bouts',
       thumbnail: '',
       duration: '1:23:15',
@@ -81,7 +81,7 @@ export default function WatchPage() {
         <div className="lg:col-span-3 space-y-6">
           {/* Video Player */}
           <VideoPlayer 
-            title="SIROC CHAMPIONSHIP LIVE"
+            title="SIR ROC CHAMPIONSHIP LIVE"
             isLive={true}
             viewers="52.3K"
           />
@@ -91,7 +91,7 @@ export default function WatchPage() {
             <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
               <div>
                 <h1 className="text-2xl md:text-3xl font-bold text-white mb-2 uppercase tracking-wide">
-                  <span className="text-yellow-400">SIROC</span> CHAMPIONSHIP LIVE
+                  <span className="text-yellow-400">SIR ROC</span> CHAMPIONSHIP LIVE
                 </h1>
                 <p className="text-gray-400 text-lg">
                   World Heavyweight Title Fight - Main Event

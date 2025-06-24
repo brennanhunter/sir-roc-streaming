@@ -34,13 +34,13 @@ const Navigation: React.FC<NavigationProps> = ({ onSearch }) => {
             <div className="flex-shrink-0">
               <img 
                 src="/images/logo.jpg" 
-                alt="SIROC Boxing Promotions" 
+                alt="SIR ROC Boxing Promotions" 
                 className="w-12 h-12 object-contain"
               />
             </div>
             <div className="hidden md:block">
               <h1 className="text-2xl font-bold">
-                <span className="text-yellow-400">SIROC</span>
+                <span className="text-yellow-400">SIR ROC</span>
                 <span className="text-white ml-2">STREAM</span>
               </h1>
               <p className="text-xs text-gray-400 uppercase tracking-widest">
@@ -146,7 +146,7 @@ const Navigation: React.FC<NavigationProps> = ({ onSearch }) => {
           <div className="flex items-center space-x-3 px-3 py-2 mb-4">
             <img 
               src="/images/logo.jpg" 
-              alt="SIROC Boxing Promotions" 
+              alt="SIR ROC Boxing Promotions" 
               className="w-10 h-10 object-contain"
             />
             <div>

@@ -147,7 +147,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
       <video 
         ref={videoRef}
         className="absolute inset-0 w-full h-full object-cover z-10"
-        src="/videos/StockFightMMA.mp4"
+        src="/videos/StockFightBoxing.mp4"
         autoPlay
         muted
         loop

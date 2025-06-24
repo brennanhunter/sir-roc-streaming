@@ -17,7 +17,7 @@ interface Channel {
 const mockChannels: Channel[] = [
   {
     id: '1',
-    name: 'SIROC CHAMPIONSHIP',
+    name: 'SIR ROC CHAMPIONSHIP',
     description: 'Main Event: World Title Fight',
     thumbnail: '/api/placeholder/280/160',
     isLive: true,

@@ -7,7 +7,7 @@ const browseMockData = {
   liveNow: [
     {
       id: 'live-1',
-      title: 'SIROC CHAMPIONSHIP LIVE',
+      title: 'SIR ROC CHAMPIONSHIP LIVE',
       description: 'World Heavyweight Title Fight - Main Event',
       thumbnail: '',
       duration: 'LIVE',
@@ -76,7 +76,7 @@ const browseMockData = {
     },
     {
       id: 'box-4',
-      title: 'SIROC UNDERCARD SPECIAL',
+      title: 'SIR ROC UNDERCARD SPECIAL',
       description: 'Rising Stars Championship Bouts',
       thumbnail: '',
       duration: '1:23:15',

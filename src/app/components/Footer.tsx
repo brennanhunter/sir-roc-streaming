@@ -12,11 +12,11 @@ const Footer: React.FC = () => {
             <div className="flex items-center space-x-3 mb-4">
               <img 
                 src="/images/logo.jpg" 
-                alt="SIROC Boxing Promotions" 
+                alt="SIR ROC Boxing Promotions" 
                 className="w-10 h-10 object-contain"
               />
               <h3 className="text-xl font-bold">
-                <span className="text-yellow-400">SIROC</span>
+                <span className="text-yellow-400">SIR ROC</span>
                 <span className="text-white ml-1">STREAM</span>
               </h3>
             </div>
@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
               Professional fights, exclusive content, ultra HD quality.
             </p>
             <div className="text-sm text-gray-500">
-              © 2025 SIROC Boxing Promotions. All rights reserved.
+              © 2025 SIR ROC Boxing Promotions. All rights reserved.
             </div>
           </div>
           
