@@ -8,7 +8,7 @@ interface VideoPlayerProps {
   viewers?: string;
 }
 
-const VideoPlayer: React.FC<VideoPlayerProps> = ({ 
+const VideoPlayer: React.FC<VideoPlayerProps> = ({  
   isLive = true, 
   viewers = "52.3K" 
 }) => {
@@ -35,7 +35,6 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
       setIsPlaying(!video.paused);
     };
 
-    // Set initial state based on autoplay
     const handleLoadedMetadata = () => {
       setIsPlaying(!video.paused);
     };
@@ -51,15 +50,15 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
     };
   }, []);
 
-  // Handle fullscreen changes (including ESC key)
+  // Handle fullscreen changes
   useEffect(() => {
     const handleFullscreenChange = () => {
       setIsFullscreen(!!document.fullscreenElement);
     };
 
     document.addEventListener('fullscreenchange', handleFullscreenChange);
-    document.addEventListener('webkitfullscreenchange', handleFullscreenChange); // For Safari
-    document.addEventListener('msfullscreenchange', handleFullscreenChange); // For IE/Edge
+    document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+    document.addEventListener('msfullscreenchange', handleFullscreenChange);
 
     return () => {
       document.removeEventListener('fullscreenchange', handleFullscreenChange);
@@ -158,19 +157,19 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
 
       {/* Live Indicator */}
       {isLive && (
-        <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 
-                        rounded-full text-sm font-bold uppercase tracking-wide
-                        animate-pulse flex items-center gap-2 z-20">
-          <span className="w-2 h-2 bg-white rounded-full animate-ping"></span>
+        <div className="absolute top-2 left-2 sm:top-4 sm:left-4 bg-red-500 text-white px-2 py-0.5 sm:px-3 sm:py-1 
+                        rounded-full text-xs sm:text-sm font-bold uppercase tracking-wide
+                        animate-pulse flex items-center gap-1 sm:gap-2 z-20">
+          <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white rounded-full animate-ping"></span>
           LIVE
         </div>
       )}
 
       {/* Viewer Count */}
-      <div className="absolute top-4 right-4 bg-black/80 text-white px-3 py-1 
-                      rounded-full text-sm font-bold flex items-center gap-2 z-20">
-        <span className="text-red-500">👁</span>
-        {viewers} watching
+      <div className="absolute top-2 right-2 sm:top-4 sm:right-4 bg-black/80 text-white px-2 py-0.5 sm:px-3 sm:py-1 
+                      rounded-full text-xs sm:text-sm font-bold flex items-center gap-1 sm:gap-2 z-20">
+        <span className="text-red-500 text-xs sm:text-base">👁</span>
+        {viewers}
       </div>
 
       {/* Play/Pause Overlay */}
@@ -179,8 +178,8 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
           className="absolute inset-0 bg-black/50 flex items-center justify-center z-30 cursor-pointer"
           onClick={togglePlay}
         >
-          <div className="w-20 h-20 bg-yellow-400 rounded-full flex items-center 
-                          justify-center text-black text-3xl font-bold
+          <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-yellow-400 rounded-full flex items-center 
+                          justify-center text-black text-xl sm:text-2xl md:text-3xl font-bold
                           shadow-lg shadow-yellow-400/50">
             ▶
           </div>
@@ -189,14 +188,14 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
 
       {/* Controls Overlay */}
       <div className={`absolute bottom-0 left-0 right-0 bg-gradient-to-t 
-                      from-black via-black/80 to-transparent p-6
+                      from-black via-black/80 to-transparent p-3 sm:p-4 md:p-6
                       transition-all duration-300 z-20 ${
         showControls ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
       }`}>
         
         {/* Progress Bar */}
-        <div className="mb-4">
-          <div className="flex items-center justify-between text-white text-sm mb-2">
+        <div className="mb-2 sm:mb-3 md:mb-4">
+          <div className="flex items-center justify-between text-white text-xs sm:text-sm mb-1 sm:mb-2">
             <span>{isLive ? 'LIVE' : '1:23:45'}</span>
             <span>{isLive ? 'STREAMING' : '2:15:30'}</span>
           </div>
@@ -208,13 +207,13 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
         </div>
 
         {/* Control Buttons */}
-        <div className="flex items-center justify-between">
+        <div className="flex items-center justify-between gap-2">
           {/* Left Controls */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2 sm:space-x-3 md:space-x-4">
             <button
               onClick={togglePlay}
-              className="w-12 h-12 bg-yellow-400 rounded-full flex items-center 
-                         justify-center text-black text-xl font-bold
+              className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-yellow-400 rounded-full flex items-center 
+                         justify-center text-black text-sm sm:text-lg md:text-xl font-bold
                          hover:bg-yellow-300 transition-colors duration-200"
             >
               {isPlaying ? '⏸' : '▶'}
@@ -222,50 +221,50 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
 
             <button
               onClick={toggleMute}
-              className="w-10 h-10 bg-gray-700 rounded-full flex items-center 
-                         justify-center text-white hover:bg-gray-600 transition-colors"
+              className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-gray-700 rounded-full flex items-center 
+                         justify-center text-white hover:bg-gray-600 transition-colors text-sm sm:text-base"
             >
               {isMuted ? '🔇' : '🔊'}
             </button>
 
-            {/* Volume Slider */}
-            <div className="flex items-center space-x-2">
+            {/* Volume Slider - Hidden on smallest screens */}
+            <div className="hidden xs:flex items-center space-x-1 sm:space-x-2">
               <input
                 type="range"
                 min="0"
                 max="100"
                 value={isMuted ? 0 : volume}
                 onChange={handleVolumeChange}
-                className="w-20 h-1 bg-gray-600 rounded-lg appearance-none cursor-pointer"
+                className="w-12 sm:w-16 md:w-20 h-1 bg-gray-600 rounded-lg appearance-none cursor-pointer"
               />
-              <span className="text-white text-sm w-8">{isMuted ? 0 : volume}</span>
+              <span className="text-white text-xs sm:text-sm w-6 sm:w-8">{isMuted ? 0 : volume}</span>
             </div>
           </div>
 
           {/* Right Controls */}
-          <div className="flex items-center space-x-4">
-            {/* Quality Selector */}
-            <select className="bg-gray-700 text-white px-3 py-1 rounded
-                             border border-gray-600 focus:border-yellow-400 focus:outline-none">
-              <option>4K Ultra HD</option>
-              <option>1080p HD</option>
+          <div className="flex items-center space-x-2 sm:space-x-3 md:space-x-4">
+            {/* Quality Selector - Hidden on smallest screens */}
+            <select className="hidden sm:block bg-gray-700 text-white px-2 py-0.5 sm:px-3 sm:py-1 rounded
+                             border border-gray-600 focus:border-yellow-400 focus:outline-none text-xs sm:text-sm">
+              <option>4K</option>
+              <option>1080p</option>
               <option>720p</option>
               <option>480p</option>
             </select>
 
-            {/* Settings */}
-            <button className="w-10 h-10 bg-gray-700 rounded-full flex items-center 
-                             justify-center text-white hover:bg-gray-600 transition-colors">
+            {/* Settings - Hidden on smallest screens */}
+            <button className="hidden xs:block w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-gray-700 rounded-full flex items-center 
+                             justify-center text-white hover:bg-gray-600 transition-colors text-sm sm:text-base">
               ⚙️
             </button>
 
             {/* Fullscreen */}
             <button
               onClick={toggleFullscreen}
-              className="w-10 h-10 bg-gray-700 rounded-full flex items-center 
-                         justify-center text-white hover:bg-gray-600 transition-colors"
+              className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-gray-700 rounded-full flex items-center 
+                         justify-center text-white hover:bg-gray-600 transition-colors text-sm sm:text-base"
             >
-              {isFullscreen ? '⛶' : '⛶'}
+              ⛶
             </button>
           </div>
         </div>
