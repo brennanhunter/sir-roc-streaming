@@ -2,6 +2,7 @@
 
 import React from 'react';
 import ChannelGrid from './components/ChannelGrid';
+import PartnershipCTA from './components/PartnershipCTA';
 
 export default function Home() {
   interface Channel {
@@ -153,6 +154,7 @@ export default function Home() {
             </p>
           </div>
         </div>
+        <PartnershipCTA />
       </div>
     </div>
   );

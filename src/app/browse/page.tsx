@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import CategorySection from '../components/CategorySection';
+import PartnershipCTA from '../components/PartnershipCTA';
 
 const browseMockData = {
   liveNow: [
@@ -276,25 +277,8 @@ export default function BrowsePage() {
       <div className="mt-16 text-center bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 
                       rounded-2xl p-8 md:p-12 border border-gray-700">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-          Can&apos;t Find What You&apos;re Looking For?
+          <PartnershipCTA />
         </h2>
-        <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
-          Request specific fights, suggest new content, or contact our team 
-          for exclusive event access and premium features.
-        </p>
-        <div className="flex flex-wrap justify-center gap-4">
-          <button className="bg-yellow-400 hover:bg-yellow-500 text-black 
-                           px-8 py-3 rounded-lg font-bold uppercase tracking-wide
-                           transition-all duration-200">
-            Request Content
-          </button>
-          <button className="border-2 border-yellow-400 text-yellow-400 
-                           hover:bg-yellow-400 hover:text-black
-                           px-8 py-3 rounded-lg font-bold uppercase tracking-wide
-                           transition-all duration-200">
-            Contact Support
-          </button>
-        </div>
       </div>
     </div>
   );

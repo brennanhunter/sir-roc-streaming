@@ -5,6 +5,7 @@ import Link from 'next/link';
 import VideoPlayer from '../components/VideoPlayer';
 import LiveChat from '../components/LiveChat';
 import VideoCard from '../components/VideoCard';
+import PartnershipCTA from '../components/PartnershipCTA';
 
 export default function WatchPage() {
   // Prevent auto-scroll on page load
@@ -142,7 +143,7 @@ export default function WatchPage() {
               </div>
             </div>
           </div>
-
+        <PartnershipCTA />
           {/* Related Fights */}
           <div>
             <h2 className="text-2xl font-bold text-white mb-6 uppercase tracking-wide">
