@@ -151,7 +151,7 @@ const Navigation: React.FC<NavigationProps> = ({ onSearch }) => {
             />
             <div>
               <h1 className="text-lg font-bold">
-                <span className="text-yellow-400">SIROC</span>
+                <span className="text-yellow-400">SIR ROC</span>
                 <span className="text-white ml-1">STREAM</span>
               </h1>
             </div>
