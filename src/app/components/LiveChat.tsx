@@ -16,6 +16,7 @@ const LiveChat: React.FC = () => {
   const [newMessage, setNewMessage] = useState('');
   const [isConnected] = useState(true);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const chatContainerRef = useRef<HTMLDivElement>(null);
 
   const mockMessages: ChatMessage[] = [
     { id: '1', username: 'BoxingFan92', message: 'This fight is incredible! 🔥', timestamp: '2:34', isVip: true },
@@ -63,28 +64,10 @@ const LiveChat: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    // Prevent mobile scroll bubbling
-    if (messagesEndRef.current) {
-      messagesEndRef.current.scrollIntoView({ 
-        behavior: 'smooth',
-        block: 'end',
-        inline: 'nearest'
-      });
-      
-      // Add touch event prevention for mobile
-      const chatContainer = messagesEndRef.current.closest('.overflow-y-auto');
-      if (chatContainer) {
-        const preventBodyScroll = (e: Event) => {
-          e.preventDefault();
-          e.stopPropagation();
-        };
-
-        chatContainer.addEventListener('touchmove', preventBodyScroll, { passive: false });
-        
-        return () => {
-          chatContainer.removeEventListener('touchmove', preventBodyScroll);
-        };
-      }
+    // Scroll to bottom of chat only, not the page
+    if (messagesEndRef.current && chatContainerRef.current) {
+      // Use scrollTop instead of scrollIntoView to avoid page jumping
+      chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
     }
   }, [messages]);
 
@@ -106,12 +89,15 @@ const LiveChat: React.FC = () => {
   return (
     <div className="bg-gray-900 rounded-xl border border-gray-700 h-full flex flex-col"
          style={{ 
+           position: 'relative',
+           isolation: 'isolate',
            contain: 'layout style size',
-           touchAction: 'pan-y',
+           touchAction: 'none',
            overscrollBehavior: 'contain'
          }}
          onScroll={(e) => e.stopPropagation()}
-         onTouchMove={(e) => e.stopPropagation()}>
+         onTouchMove={(e) => e.stopPropagation()}
+         onWheel={(e) => e.stopPropagation()}>
       {/* Chat Header */}
       <div className="p-4 border-b border-gray-700">
         <div className="flex items-center justify-between">
@@ -131,17 +117,20 @@ const LiveChat: React.FC = () => {
       </div>
 
       {/* Messages Area */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-3 min-h-0 scroll-smooth"
-           style={{ 
-             scrollBehavior: 'smooth', 
-             contain: 'layout style size',
-             touchAction: 'pan-y',
-             overscrollBehavior: 'contain',
-             WebkitOverflowScrolling: 'touch'
-           }}
-           onScroll={(e) => e.stopPropagation()}
-           onTouchMove={(e) => e.stopPropagation()}
-           onTouchStart={(e) => e.stopPropagation()}>
+      <div 
+        ref={chatContainerRef}
+        className="flex-1 overflow-y-auto p-4 space-y-3 min-h-0"
+        style={{ 
+          contain: 'strict',
+          touchAction: 'pan-y',
+          overscrollBehavior: 'contain',
+          WebkitOverflowScrolling: 'touch',
+          scrollBehavior: 'auto'
+        }}
+        onScroll={(e) => e.stopPropagation()}
+        onTouchMove={(e) => e.stopPropagation()}
+        onTouchStart={(e) => e.stopPropagation()}
+        onWheel={(e) => e.stopPropagation()}>
         {messages.map((msg) => (
           <div key={msg.id} className="flex flex-col space-y-1">
             <div className="flex items-center gap-2">
