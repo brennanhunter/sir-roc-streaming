@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 
 import React, { useState } from 'react';
 
@@ -93,8 +94,8 @@ export default function PitchPage() {
             <div className="bg-black p-8 rounded-xl border border-gray-700">
               <h4 className="text-2xl font-bold mb-4 text-yellow-400">The Reality</h4>
               <p className="text-gray-300 text-lg leading-relaxed">
-                "Every boxing match you stream for free is potential revenue lost. Your audience 
-                would gladly pay $15 to watch premium Sir Roc content, but they have no way to do it."
+                &quot;Every boxing match you stream for free is potential revenue lost. Your audience 
+                would gladly pay $15 to watch premium Sir Roc content, but they have no way to do it.&quot;
               </p>
             </div>
           </div>
@@ -432,12 +433,13 @@ export default function PitchPage() {
             >
               Schedule a Call
             </a>
-            <a 
+             <Link 
               href="/" 
               className="border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black py-4 px-8 rounded-lg font-bold text-lg transition-colors inline-block"
             >
               See Live Demo
-            </a>
+            </Link>
+           
           </div>
           
           {/* Xtremery Credibility */}
