@@ -14,7 +14,7 @@ interface ChatMessage {
 const LiveChat: React.FC = () => {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [newMessage, setNewMessage] = useState('');
-  const [isConnected] = useState(true);
+  const [isConnected, setIsConnected] = useState(true);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const mockMessages: ChatMessage[] = [
@@ -63,11 +63,29 @@ const LiveChat: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ 
-      behavior: 'smooth',
-      block: 'end',
-      inline: 'nearest'
-    });
+    // Prevent mobile scroll bubbling
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'end',
+        inline: 'nearest'
+      });
+      
+      // Add touch event prevention for mobile
+      const chatContainer = messagesEndRef.current.closest('.overflow-y-auto');
+      if (chatContainer) {
+        const preventBodyScroll = (e: Event) => {
+          e.preventDefault();
+          e.stopPropagation();
+        };
+
+        chatContainer.addEventListener('touchmove', preventBodyScroll, { passive: false });
+        
+        return () => {
+          chatContainer.removeEventListener('touchmove', preventBodyScroll);
+        };
+      }
+    }
   }, [messages]);
 
   const handleSendMessage = (e: React.FormEvent) => {
@@ -87,8 +105,13 @@ const LiveChat: React.FC = () => {
 
   return (
     <div className="bg-gray-900 rounded-xl border border-gray-700 h-full flex flex-col"
-         style={{ contain: 'layout style' }}
-         onScroll={(e) => e.stopPropagation()}>
+         style={{ 
+           contain: 'layout style size',
+           touchAction: 'pan-y',
+           overscrollBehavior: 'contain'
+         }}
+         onScroll={(e) => e.stopPropagation()}
+         onTouchMove={(e) => e.stopPropagation()}>
       {/* Chat Header */}
       <div className="p-4 border-b border-gray-700">
         <div className="flex items-center justify-between">
@@ -109,8 +132,16 @@ const LiveChat: React.FC = () => {
 
       {/* Messages Area */}
       <div className="flex-1 overflow-y-auto p-4 space-y-3 min-h-0 scroll-smooth"
-           style={{ scrollBehavior: 'smooth', contain: 'layout style' }}
-           onScroll={(e) => e.stopPropagation()}>
+           style={{ 
+             scrollBehavior: 'smooth', 
+             contain: 'layout style size',
+             touchAction: 'pan-y',
+             overscrollBehavior: 'contain',
+             WebkitOverflowScrolling: 'touch'
+           }}
+           onScroll={(e) => e.stopPropagation()}
+           onTouchMove={(e) => e.stopPropagation()}
+           onTouchStart={(e) => e.stopPropagation()}>
         {messages.map((msg) => (
           <div key={msg.id} className="flex flex-col space-y-1">
             <div className="flex items-center gap-2">
