@@ -52,6 +52,23 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
     };
   }, []);
 
+  // Handle fullscreen changes (including ESC key)
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement);
+    };
+
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    document.addEventListener('webkitfullscreenchange', handleFullscreenChange); // For Safari
+    document.addEventListener('msfullscreenchange', handleFullscreenChange); // For IE/Edge
+
+    return () => {
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+      document.removeEventListener('webkitfullscreenchange', handleFullscreenChange);
+      document.removeEventListener('msfullscreenchange', handleFullscreenChange);
+    };
+  }, []);
+
   const togglePlay = async () => {
     const video = videoRef.current;
     if (!video) return;
@@ -249,7 +266,7 @@ const VideoPlayer: React.FC<VideoPlayerProps> = ({
               className="w-10 h-10 bg-gray-700 rounded-full flex items-center 
                          justify-center text-white hover:bg-gray-600 transition-colors"
             >
-              ⛶
+              {isFullscreen ? '⛶' : '⛶'}
             </button>
           </div>
         </div>
