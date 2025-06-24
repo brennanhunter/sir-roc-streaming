@@ -4,7 +4,12 @@ import React from 'react';
 import ChannelGrid from './components/ChannelGrid';
 
 export default function Home() {
-  const handleChannelClick = (channel: any) => {
+  interface Channel {
+    name: string;
+    // Add other properties as needed
+  }
+
+  const handleChannelClick = (channel: Channel) => {
     console.log('Opening channel:', channel.name);
     // Add navigation to player page here
   };
@@ -118,7 +123,7 @@ export default function Home() {
             <h3 className="text-xl font-bold text-white mb-3">EXCLUSIVE CONTENT</h3>
             <p className="text-gray-400">
               Access to SIROC championship fights, behind-the-scenes content, 
-              and fighter interviews you won't find anywhere else.
+              and fighter interviews you won&apos;t find anywhere else.
             </p>
           </div>
           

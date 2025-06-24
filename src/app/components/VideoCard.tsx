@@ -20,7 +20,6 @@ const VideoCard: React.FC<VideoCardProps> = ({
   id,
   title,
   description,
-  thumbnail,
   videoUrl,
   duration = "2:15",
   views,

@@ -14,7 +14,7 @@ interface ChatMessage {
 const LiveChat: React.FC = () => {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [newMessage, setNewMessage] = useState('');
-  const [isConnected, setIsConnected] = useState(true);
+  const [isConnected] = useState(true);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const mockMessages: ChatMessage[] = [

@@ -276,7 +276,7 @@ export default function BrowsePage() {
       <div className="mt-16 text-center bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 
                       rounded-2xl p-8 md:p-12 border border-gray-700">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-          Can't Find What You're Looking For?
+          Can&apos;t Find What You&apos;re Looking For?
         </h2>
         <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
           Request specific fights, suggest new content, or contact our team 

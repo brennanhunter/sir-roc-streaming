@@ -124,8 +124,8 @@ export default function WatchPage() {
               <div>
                 <h3 className="text-yellow-400 font-bold mb-2 uppercase tracking-wide">Fighters</h3>
                 <div className="space-y-2 text-gray-300">
-                  <p><span className="text-gray-500">Red Corner:</span> Mike "Thunder" Johnson</p>
-                  <p><span className="text-gray-500">Blue Corner:</span> Antonio "The Bull" Rodriguez</p>
+                  <p><span className="text-gray-500">Red Corner:</span> Mike &quot;Thunder&quot; Johnson</p>
+                  <p><span className="text-gray-500">Blue Corner:</span> Antonio &quot;The Bull&quot; Rodriguez</p>
                   <p><span className="text-gray-500">Title:</span> WBC Heavyweight Championship</p>
                   <p><span className="text-gray-500">Referee:</span> John McCarthy</p>
                 </div>
