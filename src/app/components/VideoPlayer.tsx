@@ -9,7 +9,6 @@ interface VideoPlayerProps {
 }
 
 const VideoPlayer: React.FC<VideoPlayerProps> = ({ 
-  title, 
   isLive = true, 
   viewers = "52.3K" 
 }) => {
