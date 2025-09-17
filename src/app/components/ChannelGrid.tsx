@@ -120,10 +120,10 @@ const ChannelGrid: React.FC<ChannelGridProps> = ({
     <div className="w-full">
       {/* Section Header */}
       <div className="mb-6">
-        <h2 className="text-3xl font-bold text-white mb-2 uppercase tracking-wide">
-          <span className="text-yellow-400">SIROC</span> LIVE FIGHTS
+        <h2 className="text-3xl font-bold text-light mb-2 uppercase tracking-wide">
+          <span className="text-primary">SIR ROC</span> LIVE FIGHTS
         </h2>
-        <p className="text-gray-400">Premium boxing & combat sports broadcasts</p>
+        <p className="text-light/60">Premium boxing & combat sports broadcasts</p>
       </div>
       
       {/* Channel Grid */}
@@ -147,7 +147,7 @@ const ChannelGrid: React.FC<ChannelGridProps> = ({
       
       {/* Load More */}
       <div className="flex justify-center mt-8">
-        <button className="bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 
+        <button className="bg-secondary hover:bg-secondary/80 text-light px-6 py-3 
                            rounded-lg transition-colors duration-200 font-medium">
           Load More Channels
         </button>

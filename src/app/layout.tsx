@@ -24,12 +24,12 @@ export default function RootLayout({
         <meta name="description" content="Watch exclusive SIROC boxing events and world-class combat sports in ultra-high definition. Live fights, instant replays, multi-angle coverage." />
         <meta name="keywords" content="boxing, MMA, live streaming, SIROC, combat sports, fights" />
       </head>
-      <body className={`${inter.className} bg-black min-h-screen`}>
+      <body className={`${inter.className} bg-dark text-light min-h-screen`}>
         {/* Navigation - appears on all pages */}
         <Navigation onSearch={handleSearch} />
         
         {/* Page content */}
-        <main className="min-h-screen bg-black">
+        <main className="min-h-screen bg-dark">
           {children}
         </main>
         

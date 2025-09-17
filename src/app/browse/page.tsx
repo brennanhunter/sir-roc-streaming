@@ -202,10 +202,10 @@ export default function BrowsePage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* Page Header */}
       <div className="mb-8">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 uppercase tracking-wide">
-          Browse <span className="text-yellow-400">All Fights</span>
+        <h1 className="text-4xl md:text-5xl font-bold text-light mb-4 uppercase tracking-wide">
+          Browse <span className="text-primary">All Fights</span>
         </h1>
-        <p className="text-xl text-gray-400 max-w-3xl">
+        <p className="text-xl text-light/60 max-w-3xl">
           Discover thousands of professional boxing, MMA, kickboxing and Muay Thai fights. 
           From live events to classic matchups, all in ultra HD quality.
         </p>
@@ -221,15 +221,15 @@ export default function BrowsePage() {
               className={`px-6 py-3 rounded-lg font-bold uppercase tracking-wide text-sm
                         transition-all duration-200 flex items-center gap-2 ${
                 selectedCategory === category.id
-                  ? 'bg-yellow-400 text-black'
-                  : 'bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-yellow-400'
+                  ? 'bg-primary text-light'
+                  : 'bg-dark/80 text-light/70 hover:bg-secondary hover:text-primary'
               }`}
             >
               {category.label}
               <span className={`text-xs px-2 py-1 rounded-full ${
                 selectedCategory === category.id
-                  ? 'bg-black/20 text-black'
-                  : 'bg-gray-700 text-gray-400'
+                  ? 'bg-light/20 text-light'
+                  : 'bg-secondary text-light/60'
               }`}>
                 {category.count}
               </span>
@@ -274,9 +274,9 @@ export default function BrowsePage() {
       </div>
 
       {/* Call to Action */}
-      <div className="mt-16 text-center bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 
-                      rounded-2xl p-8 md:p-12 border border-gray-700">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+      <div className="mt-16 text-center bg-gradient-to-r from-dark via-secondary to-dark 
+                      rounded-2xl p-8 md:p-12 border border-secondary">
+        <h2 className="text-3xl md:text-4xl font-bold text-light mb-4">
           <PartnershipCTA />
         </h2>
       </div>

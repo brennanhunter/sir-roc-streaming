@@ -69,7 +69,7 @@ export default function WatchPage() {
       <div className="mb-6">
         <Link 
           href="/"
-          className="inline-flex items-center gap-2 text-gray-400 hover:text-yellow-400 
+          className="inline-flex items-center gap-2 text-light/60 hover:text-primary 
                    transition-colors duration-200 font-medium"
         >
           ← Back to Live Fights
@@ -88,57 +88,57 @@ export default function WatchPage() {
           />
 
           {/* Fight Info */}
-          <div className="bg-gray-900 rounded-xl p-6 border border-gray-700">
+          <div className="bg-dark rounded-xl p-6 border border-secondary">
             <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
               <div>
-                <h1 className="text-2xl md:text-3xl font-bold text-white mb-2 uppercase tracking-wide">
-                  <span className="text-yellow-400">SIR ROC</span> CHAMPIONSHIP LIVE
+                <h1 className="text-2xl md:text-3xl font-bold text-light mb-2 uppercase tracking-wide">
+                  <span className="text-primary">SIR ROC</span> CHAMPIONSHIP LIVE
                 </h1>
-                <p className="text-gray-400 text-lg">
+                <p className="text-light/60 text-lg">
                   World Heavyweight Title Fight - Main Event
                 </p>
               </div>
               <div className="flex items-center gap-4 mt-4 md:mt-0">
-                <div className="bg-red-500 text-white px-3 py-1 rounded-full text-sm font-bold
+                <div className="bg-red-500 text-light px-3 py-1 rounded-full text-sm font-bold
                                uppercase tracking-wide animate-pulse flex items-center gap-2">
                   <span className="w-2 h-2 bg-white rounded-full"></span>
                   LIVE NOW
                 </div>
-                <div className="text-yellow-400 font-bold">
+                <div className="text-primary font-bold">
                   52.3K watching
                 </div>
               </div>
             </div>
 
             {/* Fight Details */}
-            <div className="grid md:grid-cols-3 gap-6 pt-6 border-t border-gray-700">
+            <div className="grid md:grid-cols-3 gap-6 pt-6 border-t border-secondary">
               <div>
-                <h3 className="text-yellow-400 font-bold mb-2 uppercase tracking-wide">Event Details</h3>
-                <div className="space-y-2 text-gray-300">
-                  <p><span className="text-gray-500">Date:</span> June 23, 2025</p>
-                  <p><span className="text-gray-500">Location:</span> MGM Grand, Las Vegas</p>
-                  <p><span className="text-gray-500">Weight Class:</span> Heavyweight</p>
-                  <p><span className="text-gray-500">Rounds:</span> 12 x 3 minutes</p>
+                <h3 className="text-primary font-bold mb-2 uppercase tracking-wide">Event Details</h3>
+                <div className="space-y-2 text-light/80">
+                  <p><span className="text-light/50">Date:</span> June 23, 2025</p>
+                  <p><span className="text-light/50">Location:</span> MGM Grand, Las Vegas</p>
+                  <p><span className="text-light/50">Weight Class:</span> Heavyweight</p>
+                  <p><span className="text-light/50">Rounds:</span> 12 x 3 minutes</p>
                 </div>
               </div>
               
               <div>
-                <h3 className="text-yellow-400 font-bold mb-2 uppercase tracking-wide">Fighters</h3>
-                <div className="space-y-2 text-gray-300">
-                  <p><span className="text-gray-500">Red Corner:</span> Mike &quot;Thunder&quot; Johnson</p>
-                  <p><span className="text-gray-500">Blue Corner:</span> Antonio &quot;The Bull&quot; Rodriguez</p>
-                  <p><span className="text-gray-500">Title:</span> WBC Heavyweight Championship</p>
-                  <p><span className="text-gray-500">Referee:</span> John McCarthy</p>
+                <h3 className="text-primary font-bold mb-2 uppercase tracking-wide">Fighters</h3>
+                <div className="space-y-2 text-light/80">
+                  <p><span className="text-light/50">Red Corner:</span> Mike &quot;Thunder&quot; Johnson</p>
+                  <p><span className="text-light/50">Blue Corner:</span> Antonio &quot;The Bull&quot; Rodriguez</p>
+                  <p><span className="text-light/50">Title:</span> WBC Heavyweight Championship</p>
+                  <p><span className="text-light/50">Referee:</span> John McCarthy</p>
                 </div>
               </div>
               
               <div>
-                <h3 className="text-yellow-400 font-bold mb-2 uppercase tracking-wide">Statistics</h3>
-                <div className="space-y-2 text-gray-300">
-                  <p><span className="text-gray-500">Round:</span> 3 of 12</p>
-                  <p><span className="text-gray-500">Time:</span> 1:45 remaining</p>
-                  <p><span className="text-gray-500">Total Punches:</span> Johnson 47, Rodriguez 52</p>
-                  <p><span className="text-gray-500">Power Shots:</span> Johnson 23, Rodriguez 31</p>
+                <h3 className="text-primary font-bold mb-2 uppercase tracking-wide">Statistics</h3>
+                <div className="space-y-2 text-light/80">
+                  <p><span className="text-light/50">Round:</span> 3 of 12</p>
+                  <p><span className="text-light/50">Time:</span> 1:45 remaining</p>
+                  <p><span className="text-light/50">Total Punches:</span> Johnson 47, Rodriguez 52</p>
+                  <p><span className="text-light/50">Power Shots:</span> Johnson 23, Rodriguez 31</p>
                 </div>
               </div>
             </div>
@@ -146,8 +146,8 @@ export default function WatchPage() {
         <PartnershipCTA />
           {/* Related Fights */}
           <div>
-            <h2 className="text-2xl font-bold text-white mb-6 uppercase tracking-wide">
-              More <span className="text-yellow-400">Live Fights</span>
+            <h2 className="text-2xl font-bold text-light mb-6 uppercase tracking-wide">
+              More <span className="text-primary">Live Fights</span>
             </h2>
             <div className="grid md:grid-cols-2 gap-6">
               {relatedFights.map((fight) => (
@@ -169,33 +169,33 @@ export default function WatchPage() {
           </div>
 
           {/* Quick Stats */}
-          <div className="bg-gray-900 rounded-xl p-6 border border-gray-700">
-            <h3 className="text-yellow-400 font-bold mb-4 uppercase tracking-wide">
+          <div className="bg-dark rounded-xl p-6 border border-secondary">
+            <h3 className="text-primary font-bold mb-4 uppercase tracking-wide">
               Fight Stats
             </h3>
             <div className="space-y-4">
               <div className="flex justify-between items-center">
-                <span className="text-gray-400">Viewers</span>
-                <span className="text-white font-bold">52.3K</span>
+                <span className="text-light/60">Viewers</span>
+                <span className="text-light font-bold">52.3K</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-gray-400">Quality</span>
-                <span className="text-yellow-400 font-bold">4K Ultra HD</span>
+                <span className="text-light/60">Quality</span>
+                <span className="text-primary font-bold">4K Ultra HD</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-gray-400">Audio</span>
-                <span className="text-white font-bold">5.1 Surround</span>
+                <span className="text-light/60">Audio</span>
+                <span className="text-light font-bold">5.1 Surround</span>
               </div>
               <div className="flex justify-between items-center">
-                <span className="text-gray-400">Latency</span>
+                <span className="text-light/60">Latency</span>
                 <span className="text-green-400 font-bold">Ultra Low</span>
               </div>
             </div>
           </div>
 
           {/* Social Share */}
-          <div className="bg-gray-900 rounded-xl p-6 border border-gray-700">
-            <h3 className="text-yellow-400 font-bold mb-4 uppercase tracking-wide">
+          <div className="bg-dark rounded-xl p-6 border border-secondary">
+            <h3 className="text-primary font-bold mb-4 uppercase tracking-wide">
               Share This Fight
             </h3>
             <div className="space-y-3">
@@ -209,7 +209,7 @@ export default function WatchPage() {
                                justify-center gap-2">
                 🐦 Share on Twitter
               </button>
-              <button className="w-full bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 
+              <button className="w-full bg-secondary hover:bg-secondary/80 text-light py-2 px-4 
                                rounded-lg transition-colors duration-200 flex items-center 
                                justify-center gap-2">
                 🔗 Copy Link

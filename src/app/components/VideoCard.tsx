@@ -58,24 +58,24 @@ const VideoCard: React.FC<VideoCardProps> = ({
       onMouseLeave={() => setIsHovered(false)}
       onClick={handleClick}
     >
-      <div className="relative bg-gray-900 rounded-xl overflow-hidden border-2 border-gray-700 
+      <div className="relative bg-dark/50 rounded-xl overflow-hidden border-2 border-secondary 
                       transition-all duration-300 ease-in-out
-                      group-hover:border-yellow-400 group-hover:transform group-hover:-translate-y-1 
-                      group-hover:shadow-xl group-hover:shadow-yellow-400/30">
+                      group-hover:border-primary group-hover:transform group-hover:-translate-y-1 
+                      group-hover:shadow-xl group-hover:shadow-primary/30">
         
         {/* Video Thumbnail */}
-        <div className="relative w-full aspect-video bg-gradient-to-br from-gray-700 to-gray-800 
+        <div className="relative w-full aspect-video bg-gradient-to-br from-secondary to-dark 
                         overflow-hidden">
           
           {/* Static Thumbnail / Play Button */}
-          <div className={`w-full h-full bg-gradient-to-br from-gray-600 to-gray-800 
+          <div className={`w-full h-full bg-gradient-to-br from-secondary to-dark 
                           flex items-center justify-center relative transition-opacity duration-300 ${
             isHovered ? 'opacity-0' : 'opacity-100'
           }`}>
-            {/* Gold Play Button */}
-            <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 
-                            rounded-full flex items-center justify-center text-black text-2xl font-bold
-                            border-2 border-yellow-300 shadow-lg shadow-yellow-400/50
+            {/* Primary Play Button */}
+            <div className="w-16 h-16 bg-gradient-to-br from-primary to-primary/80 
+                            rounded-full flex items-center justify-center text-light text-2xl font-bold
+                            border-2 border-primary/60 shadow-lg shadow-primary/50
                             transition-transform duration-300 hover:scale-110">
               ▶
             </div>
@@ -95,13 +95,13 @@ const VideoCard: React.FC<VideoCardProps> = ({
           )}
             
           {/* Overlay for hover effect */}
-          <div className={`absolute inset-0 bg-black/20 transition-opacity duration-300 ${
+          <div className={`absolute inset-0 bg-dark/20 transition-opacity duration-300 ${
             isHovered ? 'opacity-100' : 'opacity-0'
           }`}></div>
 
           {/* Live Indicator */}
           {isLive && (
-            <div className="absolute top-3 right-3 bg-red-500 text-white px-2 py-1 
+            <div className="absolute top-3 right-3 bg-red-500 text-light px-2 py-1 
                             rounded text-xs font-bold uppercase tracking-wide z-10
                             animate-pulse">
               🔴 LIVE
@@ -110,7 +110,7 @@ const VideoCard: React.FC<VideoCardProps> = ({
 
           {/* Category Badge */}
           {category && (
-            <div className="absolute top-3 left-3 bg-black/80 text-yellow-400 px-2 py-1 
+            <div className="absolute top-3 left-3 bg-dark/80 text-primary px-2 py-1 
                             rounded text-xs font-bold uppercase tracking-wider">
               {category}
             </div>
@@ -118,7 +118,7 @@ const VideoCard: React.FC<VideoCardProps> = ({
 
           {/* Duration */}
           {!isLive && (
-            <div className="absolute bottom-3 right-3 bg-black/80 text-white px-2 py-1 
+            <div className="absolute bottom-3 right-3 bg-dark/80 text-light px-2 py-1 
                             rounded text-xs font-bold">
               {duration}
             </div>
@@ -129,9 +129,9 @@ const VideoCard: React.FC<VideoCardProps> = ({
                           transition-all duration-300 ${
             isHovered ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
           }`}>
-            <div className="w-16 h-16 bg-yellow-400 rounded-full flex items-center 
-                            justify-center text-black text-2xl font-bold
-                            shadow-lg shadow-yellow-400/50">
+            <div className="w-16 h-16 bg-primary rounded-full flex items-center 
+                            justify-center text-light text-2xl font-bold
+                            shadow-lg shadow-primary/50">
               ▶
             </div>
           </div>
@@ -139,17 +139,17 @@ const VideoCard: React.FC<VideoCardProps> = ({
 
         {/* Video Info */}
         <div className="p-4">
-          <h3 className="text-white font-bold text-lg mb-2 line-clamp-2 
-                         group-hover:text-yellow-400 transition-colors duration-200">
+          <h3 className="text-light font-bold text-lg mb-2 line-clamp-2 
+                         group-hover:text-primary transition-colors duration-200">
             {title}
           </h3>
-          <p className="text-gray-400 text-sm mb-3 line-clamp-2">
+          <p className="text-light/60 text-sm mb-3 line-clamp-2">
             {description}
           </p>
           
           {/* Stats */}
           <div className="flex justify-between items-center text-xs">
-            <div className="text-gray-500 flex items-center gap-2">
+            <div className="text-light/50 flex items-center gap-2">
               {isLive ? (
                 <span className="flex items-center gap-1">
                   <span className="w-2 h-2 bg-red-500 rounded-full"></span>
@@ -159,7 +159,7 @@ const VideoCard: React.FC<VideoCardProps> = ({
                 <span>{views} views</span>
               )}
             </div>
-            <div className="text-yellow-400 font-bold uppercase tracking-wide">
+            <div className="text-primary font-bold uppercase tracking-wide">
               {isLive ? 'LIVE NOW' : 'WATCH'}
             </div>
           </div>

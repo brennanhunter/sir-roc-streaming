@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-900 border-t border-gray-800">
+    <footer className="bg-dark border-t border-secondary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid md:grid-cols-4 gap-8">
           <div className="col-span-2">
@@ -16,39 +16,39 @@ const Footer: React.FC = () => {
                 className="w-10 h-10 object-contain"
               />
               <h3 className="text-xl font-bold">
-                <span className="text-yellow-400">SIR ROC</span>
-                <span className="text-white ml-1">STREAM</span>
+                <span className="text-primary">SIR ROC</span>
+                <span className="text-light ml-1">STREAM</span>
               </h3>
             </div>
-            <p className="text-gray-400 mb-4 max-w-md">
+            <p className="text-light/60 mb-4 max-w-md">
               The premier destination for live boxing and combat sports streaming. 
               Professional fights, exclusive content, ultra HD quality.
             </p>
-            <div className="text-sm text-gray-500">
+            <div className="text-sm text-light/40">
               © 2025 SIR ROC Boxing Promotions. All rights reserved.
             </div>
           </div>
           
           <div>
-            <h4 className="text-white font-bold mb-4 uppercase tracking-wide">Platform</h4>
-            <ul className="space-y-2 text-gray-400">
+            <h4 className="text-light font-bold mb-4 uppercase tracking-wide">Platform</h4>
+            <ul className="space-y-2 text-light/60">
               <li>
-                <Link href="/" className="hover:text-yellow-400 transition-colors">
+                <Link href="/" className="hover:text-primary transition-colors">
                   Live Fights
                 </Link>
               </li>
               <li>
-                <Link href="/browse" className="hover:text-yellow-400 transition-colors">
+                <Link href="/browse" className="hover:text-primary transition-colors">
                   Browse
                 </Link>
               </li>
               <li>
-                <Link href="/schedule" className="hover:text-yellow-400 transition-colors">
+                <Link href="/schedule" className="hover:text-primary transition-colors">
                   Schedule
                 </Link>
               </li>
               <li>
-                <Link href="/highlights" className="hover:text-yellow-400 transition-colors">
+                <Link href="/highlights" className="hover:text-primary transition-colors">
                   Highlights
                 </Link>
               </li>
@@ -56,25 +56,25 @@ const Footer: React.FC = () => {
           </div>
           
           <div>
-            <h4 className="text-white font-bold mb-4 uppercase tracking-wide">Support</h4>
-            <ul className="space-y-2 text-gray-400">
+            <h4 className="text-light font-bold mb-4 uppercase tracking-wide">Support</h4>
+            <ul className="space-y-2 text-light/60">
               <li>
-                <Link href="/help" className="hover:text-yellow-400 transition-colors">
+                <Link href="/help" className="hover:text-primary transition-colors">
                   Help Center
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-yellow-400 transition-colors">
+                <Link href="/contact" className="hover:text-primary transition-colors">
                   Contact Us
                 </Link>
               </li>
               <li>
-                <Link href="/support" className="hover:text-yellow-400 transition-colors">
+                <Link href="/support" className="hover:text-primary transition-colors">
                   Technical Support
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="hover:text-yellow-400 transition-colors">
+                <Link href="/privacy" className="hover:text-primary transition-colors">
                   Privacy Policy
                 </Link>
               </li>

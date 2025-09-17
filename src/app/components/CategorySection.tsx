@@ -37,18 +37,18 @@ const CategorySection: React.FC<CategorySectionProps> = ({
       {/* Section Header */}
       <div className="flex justify-between items-end mb-6">
         <div>
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-2 uppercase tracking-wide">
+          <h2 className="text-2xl md:text-3xl font-bold text-light mb-2 uppercase tracking-wide">
             {title}
           </h2>
           {description && (
-            <p className="text-gray-400 max-w-2xl">
+            <p className="text-light/60 max-w-2xl">
               {description}
             </p>
           )}
         </div>
         
         {!showAll && videos.length > 4 && (
-          <button className="text-yellow-400 hover:text-yellow-300 font-bold 
+          <button className="text-primary hover:text-primary/80 font-bold 
                            uppercase tracking-wide text-sm transition-colors duration-200
                            flex items-center gap-2">
             View All

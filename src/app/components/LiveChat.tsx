@@ -87,7 +87,7 @@ const LiveChat: React.FC = () => {
   };
 
   return (
-    <div className="bg-gray-900 rounded-xl border border-gray-700 h-full flex flex-col"
+    <div className="bg-dark rounded-xl border border-secondary h-full flex flex-col"
          style={{ 
            position: 'relative',
            isolation: 'isolate',
@@ -99,19 +99,19 @@ const LiveChat: React.FC = () => {
          onTouchMove={(e) => e.stopPropagation()}
          onWheel={(e) => e.stopPropagation()}>
       {/* Chat Header */}
-      <div className="p-4 border-b border-gray-700">
+      <div className="p-4 border-b border-secondary">
         <div className="flex items-center justify-between">
-          <h3 className="text-white font-bold text-lg uppercase tracking-wide">
+          <h3 className="text-light font-bold text-lg uppercase tracking-wide">
             Live Chat
           </h3>
           <div className="flex items-center gap-2">
             <span className={`w-2 h-2 rounded-full ${isConnected ? 'bg-green-500' : 'bg-red-500'}`}></span>
-            <span className="text-sm text-gray-400">
+            <span className="text-sm text-light/60">
               {isConnected ? 'Connected' : 'Disconnected'}
             </span>
           </div>
         </div>
-        <div className="text-sm text-yellow-400 mt-1">
+        <div className="text-sm text-primary mt-1">
           {messages.length} viewers chatting
         </div>
       </div>
@@ -138,18 +138,18 @@ const LiveChat: React.FC = () => {
                 msg.isModerator 
                   ? 'text-red-400' 
                   : msg.isVip 
-                    ? 'text-yellow-400' 
+                    ? 'text-primary' 
                     : msg.username === 'You'
                       ? 'text-green-400'
-                      : 'text-blue-400'
+                      : 'text-primary/70'
               }`}>
                 {msg.isModerator && '🛡️ '}
                 {msg.isVip && '👑 '}
                 {msg.username}
               </span>
-              <span className="text-xs text-gray-500">{msg.timestamp}</span>
+              <span className="text-xs text-light/40">{msg.timestamp}</span>
             </div>
-            <div className="text-white text-sm leading-relaxed pl-2 border-l-2 border-gray-700">
+            <div className="text-light text-sm leading-relaxed pl-2 border-l-2 border-secondary">
               {msg.message}
             </div>
           </div>
@@ -158,29 +158,29 @@ const LiveChat: React.FC = () => {
       </div>
 
       {/* Chat Input */}
-      <div className="p-4 border-t border-gray-700">
+      <div className="p-4 border-t border-secondary">
         <form onSubmit={handleSendMessage} className="flex gap-2">
           <input
             type="text"
             value={newMessage}
             onChange={(e) => setNewMessage(e.target.value)}
             placeholder="Join the conversation..."
-            className="flex-1 bg-gray-800 border border-gray-600 rounded-lg px-3 py-2
-                     text-white placeholder-gray-400 focus:outline-none focus:ring-2 
-                     focus:ring-yellow-400 focus:border-transparent text-sm"
+            className="flex-1 bg-dark/80 border border-secondary rounded-lg px-3 py-2
+                     text-light placeholder-light/50 focus:outline-none focus:ring-2 
+                     focus:ring-primary focus:border-transparent text-sm"
             maxLength={200}
           />
           <button
             type="submit"
             disabled={!newMessage.trim()}
-            className="bg-yellow-400 hover:bg-yellow-500 disabled:bg-gray-600 
-                     disabled:cursor-not-allowed text-black px-4 py-2 rounded-lg 
+            className="bg-primary hover:bg-primary/80 disabled:bg-secondary 
+                     disabled:cursor-not-allowed text-light px-4 py-2 rounded-lg 
                      font-bold transition-colors duration-200"
           >
             Send
           </button>
         </form>
-        <div className="text-xs text-gray-500 mt-2">
+        <div className="text-xs text-light/50 mt-2">
           Press Enter to send • Be respectful in chat
         </div>
       </div>
