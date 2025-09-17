@@ -110,7 +110,7 @@ const PartnershipCTA: React.FC<PartnershipCTAProps> = ({ variant = 'default' }) 
             <div className="text-light/70 text-sm">Viewers Needed</div>
           </div>
           <div className="bg-light/10 backdrop-blur rounded-lg p-4">
-            <div className="text-3xl font-bold text-primary">$15</div>
+            <div className="text-3xl font-bold text-light">$15</div>
             <div className="text-light/70 text-sm">Per Pay-Per-View</div>
           </div>
           <div className="bg-light/10 backdrop-blur rounded-lg p-4">
